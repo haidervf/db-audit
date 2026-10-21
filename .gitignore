@@ -1,0 +1,28 @@
+node_modules/
+data/
+web/dist/
+test/fixtures/private/
+*.log
+.DS_Store
+
+# Env files (keep the example and throwaway local demo env committed)
+.env
+.env.*
+!.env.example
+!dev/.env.dev
+
+# Build / test output
+*.tsbuildinfo
+coverage/
+
+# Local SQLite caches
+*.sqlite
+*.sqlite-*
+*.db
+
+# Editor / tool / OS junk
+.vscode/
+.idea/
+.claude/
+*.swp
+Thumbs.db

@@ -1,0 +1,27 @@
+# Local SQL Server 2022 for db-audit development and integration tests.
+# Dev-only credentials; the container is bound to 127.0.0.1 only.
+name: db-audit
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest   # pinned to 2022: the 2025 image crashes under Rosetta
+    platform: linux/amd64                               # Apple Silicon runs it through Rosetta
+    container_name: db-audit-mssql
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "DbAudit!Dev_Passw0rd"         # keep in sync with dev/.env.dev
+      MSSQL_PID: "Developer"
+      MSSQL_AGENT_ENABLED: "true"                       # SQL Server Agent: seeded msdb jobs (Managed Instance-style job source)
+    ports:
+      - "127.0.0.1:14340:1433"
+    volumes:
+      - db-audit-mssql-data:/var/opt/mssql
+      - ./seed:/seed:ro
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P \"$$MSSQL_SA_PASSWORD\" -C -b -Q \"SELECT 1\" -o /dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+volumes:
+  db-audit-mssql-data:
+    name: db-audit-mssql-data

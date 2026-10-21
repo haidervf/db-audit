@@ -1,0 +1,5 @@
+SET QUOTED_IDENTIFIER OFF
+GO
+CREATE PROCEDURE dbo.QiOff
+AS
+SELECT * FROM dbo.Members WHERE Note = "see FROM dbo.Fake and EXEC dbo.FakeProc"

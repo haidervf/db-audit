@@ -1,0 +1,5 @@
+CREATE PROCEDURE [dbo].[HeaderOnly]
+    @a INT,
+    @b NVARCHAR(10) = N'x' OUTPUT
+WITH EXECUTE AS 'dbo', RECOMPILE
+AS

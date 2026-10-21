@@ -1,0 +1,236 @@
+/* Design tokens. Light is the default; [data-theme='dark'] on <html> switches the palette. */
+:root {
+  --font-ui: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+  --fs-xs: 11px;
+  --fs-sm: 12px;
+  --fs-md: 13px;
+  --fs-lg: 15px;
+  --fs-xl: 18px;
+  --fs-2xl: 22px;
+
+  --r-sm: 4px;
+  --r-md: 6px;
+  --r-lg: 8px;
+  --r-xl: 12px;
+
+  --sidebar-w: 236px;
+  --topbar-h: 48px;
+
+  color-scheme: light;
+  --bg: #fafbfc;
+  --sidebar-bg: #f3f4f7;
+  --surface: #ffffff;
+  --surface-2: #f5f6f8;
+  --surface-3: #eceef2;
+  --hover: rgba(15, 23, 42, 0.045);
+  --active: rgba(15, 23, 42, 0.08);
+  --border: #e3e6eb;
+  --border-strong: #ccd1d9;
+  --text: #1a1d24;
+  --text-2: #4b5261;
+  --text-3: #7d8494;
+  --text-inverse: #ffffff;
+  --accent: #5b5bd6;
+  --accent-hover: #4b4bc4;
+  --accent-weak: #eeeefc;
+  --accent-text: #4545b8;
+  --focus: rgba(91, 91, 214, 0.35);
+  --ok: #18884a;
+  --ok-weak: #e6f5ec;
+  --warn: #a76100;
+  --warn-weak: #fdf3e1;
+  --danger: #cc3333;
+  --danger-weak: #fcebeb;
+  --info: #2f6fca;
+  --info-weak: #e9f1fc;
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 4px 12px rgba(16, 24, 40, 0.08), 0 1px 3px rgba(16, 24, 40, 0.06);
+  --shadow-lg: 0 16px 48px rgba(16, 24, 40, 0.18), 0 2px 6px rgba(16, 24, 40, 0.08);
+  --backdrop: rgba(15, 18, 26, 0.38);
+
+  /* object kinds: solid / tint background / text on tint */
+  --k-procedure: #7c3aed;
+  --k-procedure-bg: #f1eafe;
+  --k-procedure-fg: #6425c9;
+  --k-table: #2563eb;
+  --k-table-bg: #e7effd;
+  --k-table-fg: #1d4fc0;
+  --k-view: #0d9488;
+  --k-view-bg: #e0f4f2;
+  --k-view-fg: #0b7a70;
+  --k-function: #d97706;
+  --k-function-bg: #fdf0dc;
+  --k-function-fg: #a95b04;
+  --k-trigger: #e11d48;
+  --k-trigger-bg: #fde8ed;
+  --k-trigger-fg: #be123c;
+  --k-job: #16a34a;
+  --k-job-bg: #e3f6ea;
+  --k-job-fg: #12803b;
+  --k-jobstep: #6b8e23;
+  --k-jobstep-bg: #eef4df;
+  --k-jobstep-fg: #55711b;
+  --k-external: #6b7280;
+  --k-external-bg: #f1f2f4;
+  --k-external-fg: #4b5563;
+  --k-unknown: #9ca3af;
+  --k-unknown-bg: #f3f4f6;
+  --k-unknown-fg: #6b7280;
+
+  /* table operations */
+  --op-select: #3e6aa8;
+  --op-select-bg: #e8eef7;
+  --op-insert: #15803d;
+  --op-insert-bg: #e2f5e8;
+  --op-update: #b45309;
+  --op-update-bg: #fdf0dc;
+  --op-delete: #c62828;
+  --op-delete-bg: #fde8e8;
+  --op-merge: #8b3fd9;
+  --op-merge-bg: #f3e9fd;
+  --op-truncate: #8b1a1a;
+  --op-truncate-bg: #f6e0e0;
+  --op-selectinto: #0e7490;
+  --op-selectinto-bg: #dff3f8;
+  --op-exec: #6d28d9;
+  --op-exec-bg: #efe8fd;
+  --op-ddl: #52606d;
+  --op-ddl-bg: #eceff3;
+
+  /* code view */
+  --code-bg: #ffffff;
+  --code-gutter-bg: #f7f8fa;
+  --code-gutter-fg: #9aa1ae;
+  --code-hl-select: rgba(91, 91, 214, 0.13);
+  --code-hl-select-edge: #5b5bd6;
+  --code-hl-hover: rgba(234, 179, 8, 0.2);
+  --code-hl-hover-edge: #d4a106;
+  --syn-keyword: #1d4fc0;
+  --syn-type: #0b7a70;
+  --syn-string: #a3320b;
+  --syn-number: #0f7a3a;
+  --syn-comment: #8a919e;
+  --syn-variable: #7a3fb5;
+  --syn-operator: #4b5261;
+  --syn-function: #9a5a00;
+
+  /* graph edges */
+  --e-reads: #3b82f6;
+  --e-writes: #ea580c;
+  --e-calls: #7c3aed;
+  --e-references: #94a3b8;
+  --e-fk: #b4bcc8;
+  --e-has-step: #16a34a;
+  --e-trigger-on: #e11d48;
+  --graph-bg: #fbfbfd;
+  --graph-dots: #d9dde4;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #111318;
+  --sidebar-bg: #0c0e12;
+  --surface: #181b21;
+  --surface-2: #1e2229;
+  --surface-3: #262b33;
+  --hover: rgba(255, 255, 255, 0.05);
+  --active: rgba(255, 255, 255, 0.09);
+  --border: #2a2f38;
+  --border-strong: #3a414c;
+  --text: #e7e9ee;
+  --text-2: #b0b6c2;
+  --text-3: #808796;
+  --text-inverse: #0f1115;
+  --accent: #8484f0;
+  --accent-hover: #9797f5;
+  --accent-weak: #262746;
+  --accent-text: #a9a9fb;
+  --focus: rgba(132, 132, 240, 0.45);
+  --ok: #45c47a;
+  --ok-weak: #15301f;
+  --warn: #e5a54a;
+  --warn-weak: #33260f;
+  --danger: #f07070;
+  --danger-weak: #3a1a1c;
+  --info: #6aa5f5;
+  --info-weak: #15243a;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.6);
+  --backdrop: rgba(0, 0, 0, 0.55);
+
+  --k-procedure: #a78bfa;
+  --k-procedure-bg: #2a2142;
+  --k-procedure-fg: #c4b2fd;
+  --k-table: #60a5fa;
+  --k-table-bg: #172a45;
+  --k-table-fg: #93c2fc;
+  --k-view: #2dd4bf;
+  --k-view-bg: #0f3330;
+  --k-view-fg: #6ee2d1;
+  --k-function: #fbbf24;
+  --k-function-bg: #382a0c;
+  --k-function-fg: #fcd36a;
+  --k-trigger: #fb7185;
+  --k-trigger-bg: #3d1a23;
+  --k-trigger-fg: #fda4b2;
+  --k-job: #4ade80;
+  --k-job-bg: #123320;
+  --k-job-fg: #86efac;
+  --k-jobstep: #a3c45a;
+  --k-jobstep-bg: #263016;
+  --k-jobstep-fg: #c2dc84;
+  --k-external: #9ca3af;
+  --k-external-bg: #262a31;
+  --k-external-fg: #c0c5cd;
+  --k-unknown: #7d8491;
+  --k-unknown-bg: #23262c;
+  --k-unknown-fg: #a5abb6;
+
+  --op-select: #8fb3e8;
+  --op-select-bg: #1c2a3e;
+  --op-insert: #6ee39a;
+  --op-insert-bg: #133222;
+  --op-update: #f5b955;
+  --op-update-bg: #36290f;
+  --op-delete: #f78a8a;
+  --op-delete-bg: #3d1a1c;
+  --op-merge: #c9a2f7;
+  --op-merge-bg: #2d1f43;
+  --op-truncate: #f2a0a0;
+  --op-truncate-bg: #4a1616;
+  --op-selectinto: #67d3ea;
+  --op-selectinto-bg: #0f2f38;
+  --op-exec: #b9a0fa;
+  --op-exec-bg: #2a2142;
+  --op-ddl: #aab4c0;
+  --op-ddl-bg: #262b33;
+
+  --code-bg: #15181d;
+  --code-gutter-bg: #15181d;
+  --code-gutter-fg: #5f6775;
+  --code-hl-select: rgba(132, 132, 240, 0.2);
+  --code-hl-select-edge: #8484f0;
+  --code-hl-hover: rgba(234, 179, 8, 0.18);
+  --code-hl-hover-edge: #e0b130;
+  --syn-keyword: #82aaff;
+  --syn-type: #5fd7c4;
+  --syn-string: #f0a27a;
+  --syn-number: #8bd49c;
+  --syn-comment: #6b7383;
+  --syn-variable: #c7a2f8;
+  --syn-operator: #b0b6c2;
+  --syn-function: #f2c46d;
+
+  --e-reads: #60a5fa;
+  --e-writes: #fb923c;
+  --e-calls: #a78bfa;
+  --e-references: #6b7685;
+  --e-fk: #4e5663;
+  --e-has-step: #4ade80;
+  --e-trigger-on: #fb7185;
+  --graph-bg: #12151a;
+  --graph-dots: #262b33;
+}

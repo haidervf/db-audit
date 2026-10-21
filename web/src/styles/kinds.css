@@ -1,0 +1,126 @@
+/* Generated-style rules: kind and op colors (keep in sync with tokens.css). */
+[data-kind='procedure'] {
+  --kc: var(--k-procedure);
+  --kc-bg: var(--k-procedure-bg);
+  --kc-fg: var(--k-procedure-fg);
+}
+[data-kind='table'] {
+  --kc: var(--k-table);
+  --kc-bg: var(--k-table-bg);
+  --kc-fg: var(--k-table-fg);
+}
+[data-kind='view'] {
+  --kc: var(--k-view);
+  --kc-bg: var(--k-view-bg);
+  --kc-fg: var(--k-view-fg);
+}
+[data-kind='function'] {
+  --kc: var(--k-function);
+  --kc-bg: var(--k-function-bg);
+  --kc-fg: var(--k-function-fg);
+}
+[data-kind='trigger'] {
+  --kc: var(--k-trigger);
+  --kc-bg: var(--k-trigger-bg);
+  --kc-fg: var(--k-trigger-fg);
+}
+[data-kind='job'] {
+  --kc: var(--k-job);
+  --kc-bg: var(--k-job-bg);
+  --kc-fg: var(--k-job-fg);
+}
+[data-kind='jobstep'] {
+  --kc: var(--k-jobstep);
+  --kc-bg: var(--k-jobstep-bg);
+  --kc-fg: var(--k-jobstep-fg);
+}
+[data-kind='external'] {
+  --kc: var(--k-external);
+  --kc-bg: var(--k-external-bg);
+  --kc-fg: var(--k-external-fg);
+}
+[data-kind='unknown'] {
+  --kc: var(--k-unknown);
+  --kc-bg: var(--k-unknown-bg);
+  --kc-fg: var(--k-unknown-fg);
+}
+.kind-badge {
+  background: var(--kc-bg, var(--surface-3));
+  color: var(--kc-fg, var(--text-2));
+}
+.kind-badge .kind-glyph,
+.kind-glyph[data-kind] {
+  background: var(--kc, var(--k-unknown));
+}
+.kind-badge[data-kind='external'] {
+  border: 1px dashed var(--k-external);
+}
+.nav-dot[data-kind] {
+  background: var(--kc);
+}
+.op-badge[data-op='select'],
+.on-kind[data-op='select'] {
+  background: var(--op-select-bg);
+  color: var(--op-select);
+}
+.op-badge[data-op='insert'],
+.on-kind[data-op='insert'] {
+  background: var(--op-insert-bg);
+  color: var(--op-insert);
+}
+.op-badge[data-op='update'],
+.on-kind[data-op='update'] {
+  background: var(--op-update-bg);
+  color: var(--op-update);
+}
+.op-badge[data-op='delete'],
+.on-kind[data-op='delete'] {
+  background: var(--op-delete-bg);
+  color: var(--op-delete);
+}
+.op-badge[data-op='merge'],
+.on-kind[data-op='merge'] {
+  background: var(--op-merge-bg);
+  color: var(--op-merge);
+}
+.op-badge[data-op='truncate'],
+.on-kind[data-op='truncate'] {
+  background: var(--op-truncate-bg);
+  color: var(--op-truncate);
+}
+.op-badge[data-op='selectinto'],
+.on-kind[data-op='selectinto'] {
+  background: var(--op-selectinto-bg);
+  color: var(--op-selectinto);
+}
+.op-badge[data-op='exec'],
+.on-kind[data-op='exec'] {
+  background: var(--op-exec-bg);
+  color: var(--op-exec);
+}
+.op-badge[data-op='ddl'],
+.on-kind[data-op='ddl'] {
+  background: var(--op-ddl-bg);
+  color: var(--op-ddl);
+}
+.on-kind[data-op='flow'] {
+  background: var(--surface-3);
+  color: var(--text-2);
+}
+.on-kind[data-op='tran'] {
+  background: var(--warn-weak);
+  color: var(--warn);
+}
+.on-kind[data-op='error'] {
+  background: var(--danger-weak);
+  color: var(--danger);
+}
+.on-kind[data-op='var'] {
+  background: transparent;
+  color: var(--text-3);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+.on-kind[data-op='cursor'] {
+  background: var(--k-view-bg);
+  color: var(--k-view-fg);
+}

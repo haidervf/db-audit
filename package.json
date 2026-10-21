@@ -1,0 +1,41 @@
+{
+  "name": "db-audit",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local web app that audits Azure SQL Databases (objects, dependencies, Elastic Jobs) and caches them in SQLite.",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "tsx server/index.ts",
+    "dev:server": "tsx watch server/index.ts",
+    "dev": "node dev/scripts/dev.mjs",
+    "build": "npm --prefix web run build",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "tsx --test --test-concurrency=1 \"test/**/*.test.ts\"",
+    "test:server": "tsx --test --test-concurrency=1 \"test/server/**/*.test.ts\"",
+    "test:e2e": "npm --prefix web run test:e2e",
+    "db:up": "bash dev/scripts/db-up.sh",
+    "db:seed": "bash dev/scripts/db-seed.sh",
+    "db:down": "bash dev/scripts/db-down.sh",
+    "db:reset": "bash dev/scripts/db-reset.sh"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
+    "@azure/identity": "^4.14.0",
+    "better-sqlite3": "^13.0.3",
+    "express": "^5.3.0",
+    "mssql": "^12.7.6",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/express": "^5.0.6",
+    "@types/mssql": "^12.3.0",
+    "@types/node": "^22.20.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

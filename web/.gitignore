@@ -1,0 +1,6 @@
+test-results/
+playwright-report/
+
+# Playwright extras
+blob-report/
+playwright/.cache/
