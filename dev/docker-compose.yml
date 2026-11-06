@@ -6,6 +6,7 @@ services:
     image: mcr.microsoft.com/mssql/server:2022-latest   # pinned to 2022: the 2025 image crashes under Rosetta
     platform: linux/amd64                               # Apple Silicon runs it through Rosetta
     container_name: db-audit-mssql
+    # TZ: Pacific/Fiji
     environment:
       ACCEPT_EULA: "Y"
       MSSQL_SA_PASSWORD: "DbAudit!Dev_Passw0rd"         # keep in sync with dev/.env.dev
